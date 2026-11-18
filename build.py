@@ -118,9 +118,17 @@ def paper_page(p, preview=False):
 
     tags = [f'<a class="tag" href="https://doi.org/{e(p["doi"])}">doi:{e(p["doi"])}</a>']
     if pdf_exists(p):
-        tags.append(f'<a class="tag" href="{e(p["pdf"])}">Accepted manuscript (PDF)</a>')
+        label = f"Full text (PDF, {p['license']})" if p.get("license") else "Accepted manuscript (PDF)"
+        tags.append(f'<a class="tag" href="{e(p["pdf"])}">{e(label)}</a>')
     elif p.get("nva"):
         tags.append(f'<a class="tag" href="{e(p["nva"])}">NVA record</a>')
+
+    if p.get("license"):
+        rights = f'<p class="note">Published open access under {e(p["license"])}.</p>'
+    elif pdf_exists(p):
+        rights = '<p class="note">The PDF is the author’s accepted manuscript. Please cite the published version.</p>'
+    else:
+        rights = ""
 
     home = "../index.html"
     body = f"""<div class="wrap">
@@ -138,6 +146,7 @@ def paper_page(p, preview=False):
     <h2>Cite</h2>
     <p class="cite">{cite}</p>
     <div class="tags">{''.join(tags)}</div>
+    {rights}
   </section>
   <footer><a href="{home}">{e(NAME)}</a> · Associate Professor of Law, University of Inland Norway</footer>
 </div>"""
@@ -210,6 +219,8 @@ def main():
 
     (out / "index.html").write_text(index_page(), encoding="utf-8")
     shutil.copy2(FILES / "portrait.jpg", out / "portrait.jpg")
+    if (FILES / "docs").is_dir():
+        shutil.copytree(FILES / "docs", out / "docs")
 
     urls = [SITE + "/"] + [f"{SITE}/papers/{s}.html" for s in sorted(built)]
     (out / "sitemap.xml").write_text(
@@ -226,6 +237,8 @@ def main():
         shutil.copytree(out / "papers", prev / "papers")
         shutil.copy2(ROOT / "src" / "page.html", prev / "index.html")
         shutil.copy2(FILES / "portrait.jpg", prev / "portrait.jpg")
+        if (out / "docs").is_dir():
+            shutil.copytree(out / "docs", prev / "docs")
 
     problems = check_links(built)
     for msg in problems:
