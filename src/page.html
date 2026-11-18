@@ -1,0 +1,493 @@
+<title>Tarjei Ellingsen Røsvoll</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Tarjei Ellingsen Røsvoll, Associate Professor of Law at the University of Inland Norway. Administrative and constitutional law, delegation, agencification and the legal organisation of the state.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column set like a register. Each entry is a line with its year in a left margin
+   column, the citation in the body, and its links (DOI, manuscript) as small mono tags. */
+:root{
+  --paper:#f4f6f8;      /* cool off-white, biased toward the ink */
+  --surface:#ffffff;
+  --ink:#16202c;        /* body text */
+  --muted:#5b6776;      /* secondary text, years */
+  --rule:#d9dee5;
+  --accent:#24476e;     /* administrative ink blue */
+  --accent-soft:#e3eaf3;
+  --draft:#7a5a12;
+  --draft-bg:#f6efdc;
+  --f-display:"Spectral", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --f-body:"Public Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --s-1:0.8125rem; --s0:1rem; --s1:1.1875rem; --s2:1.5rem; --s3:2.25rem; --s4:clamp(2.25rem, 6vw, 3.25rem);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11161d; --surface:#171d26; --ink:#e2e7ed; --muted:#97a2b0; --rule:#2a323e;
+    --accent:#a3c1e4; --accent-soft:#1d2a3a; --draft:#e2c27a; --draft-bg:#2a2414; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11161d; --surface:#171d26; --ink:#e2e7ed; --muted:#97a2b0; --rule:#2a323e;
+  --accent:#a3c1e4; --accent-soft:#1d2a3a; --draft:#e2c27a; --draft-bg:#2a2414; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--f-body); font-size:var(--s0); line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:0.18em}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px}
+.wrap{max-width:46rem; margin:0 auto; padding-block:2.5rem 4rem; display:flex; flex-direction:column; gap:3.25rem}
+
+.draft{
+  font-size:var(--s-1); color:var(--draft); background:var(--draft-bg);
+  border-radius:4px; padding:0.6rem 0.85rem; line-height:1.5; margin:0;
+}
+.draft strong{font-weight:600}
+
+header{display:flex; flex-direction:column; gap:1.1rem}
+.id{display:flex; flex-wrap:wrap; align-items:center; gap:1rem 1.5rem}
+.portrait{width:7.5rem; height:auto; aspect-ratio:3/4; max-width:100%; object-fit:cover; border-radius:4px; flex:none; background:var(--rule)}
+.id-text{flex:1 1 18rem; min-width:0; display:flex; flex-direction:column; gap:0.6rem}
+.name{
+  font-family:var(--f-display); font-weight:500; font-size:var(--s4);
+  line-height:1.05; letter-spacing:-0.01em; margin:0; text-wrap:balance;
+}
+.role{font-size:var(--s1); color:var(--ink); margin:0; max-width:36rem}
+.role span{color:var(--muted)}
+nav ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem}
+nav a{
+  font-size:var(--s-1); font-weight:500; text-transform:uppercase; letter-spacing:0.08em;
+  text-decoration:none; color:var(--muted);
+}
+nav a:hover{color:var(--accent)}
+.lede{font-family:var(--f-display); font-size:var(--s1); line-height:1.55; max-width:40rem; margin:0}
+.lede p{margin:0 0 0.9em}
+.lede p:last-child{margin:0}
+
+section{display:flex; flex-direction:column; gap:1.25rem; scroll-margin-top:1.5rem}
+h2{
+  font-family:var(--f-body); font-size:var(--s-1); font-weight:600; text-transform:uppercase;
+  letter-spacing:0.12em; color:var(--muted); margin:0; padding-bottom:0.55rem; border-bottom:1px solid var(--rule);
+}
+h3{font-family:var(--f-display); font-weight:500; font-size:var(--s1); margin:0.4rem 0 0}
+
+.themes{display:grid; grid-template-columns:repeat(auto-fit, minmax(16.5rem, 1fr)); gap:1.5rem 2rem}
+.theme{min-width:0}
+.theme h3{margin:0 0 0.35rem}
+.theme p{margin:0; color:var(--ink)}
+.theme .ref{display:block; margin-top:0.4rem; font-size:var(--s-1); color:var(--muted)}
+
+/* Featured book */
+.book{
+  background:var(--surface); border:1px solid var(--rule); border-radius:6px;
+  padding:1.25rem 1.35rem; display:flex; flex-direction:column; gap:0.5rem;
+}
+.book .kicker{font-size:var(--s-1); text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); font-weight:500}
+.book .t{font-family:var(--f-display); font-size:var(--s2); line-height:1.2; margin:0; text-wrap:balance}
+.book .t i{font-style:italic}
+.book .gloss{margin:0; color:var(--muted)}
+.book .meta{margin:0; font-size:var(--s-1); color:var(--muted)}
+
+/* Register lines */
+.reg{list-style:none; margin:0; padding:0; display:flex; flex-direction:column}
+.reg li{
+  display:grid; grid-template-columns:3.5rem minmax(0,1fr); gap:0 1rem;
+  padding:0.8rem 0; border-top:1px solid var(--rule);
+}
+.reg li:first-child{border-top:0; padding-top:0.2rem}
+.yr{font-family:var(--f-mono); font-size:var(--s-1); color:var(--muted); font-variant-numeric:tabular-nums; padding-top:0.15rem}
+.body{min-width:0}
+.ti{font-family:var(--f-display); font-size:1.0625rem; line-height:1.4}
+.gl{display:block; color:var(--muted); font-size:0.9375rem; margin-top:0.1rem}
+.src{display:block; font-size:0.9375rem; margin-top:0.15rem}
+.src i{font-style:italic}
+.tags{display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:0.4rem}
+.tag{
+  font-family:var(--f-mono); font-size:0.75rem; text-decoration:none; overflow-wrap:anywhere; max-width:100%;
+  padding:0.08rem 0.45rem; border-radius:3px; background:var(--accent-soft); color:var(--accent);
+}
+.tag:hover{text-decoration:underline}
+.co{color:var(--muted)}
+.note{font-size:var(--s-1); color:var(--muted); margin:0}
+
+.two{display:grid; grid-template-columns:repeat(auto-fit, minmax(16.5rem, 1fr)); gap:1.5rem 2rem}
+.two > div{min-width:0}
+.plain{margin:0; padding-left:1.1rem}
+.plain li{margin:0.25rem 0}
+
+.contact{display:grid; grid-template-columns:repeat(auto-fit, minmax(14rem, 1fr)); gap:1rem 2rem}
+.contact dl{margin:0}
+.contact dt{font-size:var(--s-1); text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); font-weight:500}
+.contact dd{margin:0.15rem 0 0.9rem; overflow-wrap:anywhere}
+.mail{font-family:var(--f-mono); font-size:0.9375rem; user-select:all}
+.copy{
+  margin-left:0.5rem; font:500 0.75rem var(--f-body); color:var(--accent); background:transparent;
+  border:1px solid var(--rule); border-radius:3px; padding:0.1rem 0.45rem; cursor:pointer;
+}
+.copy:hover{border-color:var(--accent)}
+.copy:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+footer{font-size:var(--s-1); color:var(--muted); border-top:1px solid var(--rule); padding-top:1rem}
+
+/* Paper pages */
+.crumb{font-size:var(--s-1); text-transform:uppercase; letter-spacing:0.08em; font-weight:500}
+.crumb a{text-decoration:none}
+.paper-title{font-family:var(--f-display); font-weight:500; font-size:var(--s3); line-height:1.15; margin:0; text-wrap:balance}
+.abstract{font-family:var(--f-display); font-size:var(--s1); line-height:1.6; max-width:40rem; margin:0}
+.abstract p{margin:0 0 0.9em}
+.cite{background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:0.9rem 1.1rem; font-size:0.9375rem; margin:0}
+
+@media (max-width:30rem){
+  .reg li{grid-template-columns:1fr}
+  .yr{padding-top:0}
+}
+@media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
+</style>
+
+<div class="wrap">
+
+  <p class="draft"><strong>Draft preview.</strong> This banner is removed on tarjeros.no.</p>
+
+  <header>
+    <div class="id">
+      <img class="portrait" src="portrait.jpg" alt="Portrait of Tarjei Ellingsen Røsvoll" width="300" height="400">
+      <div class="id-text">
+        <h1 class="name">Tarjei Ellingsen Røsvoll</h1>
+        <p class="role">Associate Professor of Law <span>· University of Inland Norway (INN), Department of Law, Philosophy and International Studies</span></p>
+      </div>
+    </div>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#talks">Talks</a></li>
+        <li><a href="#expert">Expert work</a></li>
+        <li><a href="#public">Public writing</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lede">
+      <p>Tarjei Ellingsen Røsvoll works in administrative and constitutional law. His research concerns the legal organisation of public administration: delegation, agency steering, agencification, and the democratic legitimacy of state institutions. The work is theoretical, drawing on legal theory, organisation theory and social theory, and extends to European administrative law.</p>
+      <p>His book <i>Delegering</i> (Cappelen Damm Akademisk, 2025) is a critical account of how Norwegian legal scholarship understands the organisation of the administration. He holds a PhD (2023) and an integrated master’s degree in law (2019) from the University of Bergen. Before entering academia he worked as a political journalist and editor.</p>
+    </div>
+  </header>
+
+  <section id="research" aria-labelledby="h-research">
+    <h2 id="h-research">Research</h2>
+    <div class="themes">
+      <div class="theme">
+        <h3>Delegation and administrative organisation</h3>
+        <p>The legal framework for how public tasks and powers are distributed within the administration, and how ministries steer the bodies they delegate to.</p>
+        <span class="ref">PhD and monograph <i>Delegering</i>; <i>Jussens Venner</i> 2020; <i>Stat &amp; Styring</i> 2024</span>
+      </div>
+      <div class="theme">
+        <h3>Organising public power</h3>
+        <p>Institutional acts, institutional capacity and the legal construction of the state apparatus. Project <i>Democratic legitimacy in the organisation of state power</i> (2025–), funded by Institutt for demokrati- og legitimitetsanalyse.</p>
+        <span class="ref">ICON·S 2026, Dublin; Potentia and Public Law, Amsterdam 2026</span>
+      </div>
+      <div class="theme">
+        <h3>European agencies and expertise</h3>
+        <p>EU law’s limits on delegating to independent agencies, and how an administration built on expertise can be legitimated beyond the technique/politics distinction.</p>
+        <span class="ref"><i>Lov og Rett</i> 2025</span>
+      </div>
+      <div class="theme">
+        <h3>Automation and reason-giving</h3>
+        <p>Automated decision-making in public administration, the duty to give reasons, and AI in exam grading in higher education.</p>
+        <span class="ref">Input to the Malthe-Sørenssen committee 2026; public debate 2024–26</span>
+      </div>
+      <div class="theme">
+        <h3>Legal history</h3>
+        <p>The historical development of Norwegian legal doctrine, administrative law and the organisation of the state administration.</p>
+        <span class="ref"><i>Tidsskrift for Rettsvitenskap</i> 2020; master’s thesis 2019</span>
+      </div>
+      <div class="theme">
+        <h3>Legal theory</h3>
+        <p>Socio-legal and constitutional theory, critical legal theory, and the use of Carl Schmitt’s concepts in contemporary debate.</p>
+        <span class="ref"><i>Teologisk tidsskrift</i> 2023; <i>Agora</i> 2020, 2021; <i>Nytt Norsk Tidsskrift</i> 2024</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" aria-labelledby="h-pub">
+    <h2 id="h-pub">Publications</h2>
+
+    <div class="book">
+      <span class="kicker">Monograph · 2025</span>
+      <p class="t"><i>Delegering: Et kritisk bidrag til rettsvitenskapens tenkning om forvaltningens organisering</i></p>
+      <p class="gloss">Delegation: A critical contribution to legal scholarship’s thinking about the organisation of the administration</p>
+      <p class="meta">Cappelen Damm Akademisk · ISBN 978-82-02-85966-4 · Based on the PhD thesis, University of Bergen</p>
+    </div>
+
+    <h3>Peer-reviewed articles</h3>
+    <ul class="reg">
+      <li><span class="yr">2025</span><div class="body">
+        <a class="ti" href="papers/byraifiseringen-av-europa.html">Grensene for byråifiseringen av Europa: Fra teknikk til demokratisk faglighet</a>
+        <span class="gl">The limits of Europe’s agencification: from technique to democratic expertise</span>
+        <span class="src"><i>Lov og Rett</i> 64(4), 253–276</span>
+        <div class="tags"><a class="tag" href="https://doi.org/10.18261/lor.64.4.4">doi:10.18261/lor.64.4.4</a><a class="tag" href="https://hdl.handle.net/11250/4367776">Accepted manuscript</a></div>
+      </div></li>
+      <li><span class="yr">2023</span><div class="body">
+        <span class="ti">Er Carl Schmitts begrep om diktatur relevant for diskusjonen om autoritære tiltak i møte med klimakrisen?</span>
+        <span class="gl">Is Carl Schmitt’s concept of dictatorship relevant to the debate on authoritarian measures against the climate crisis?</span>
+        <span class="src"><i>Teologisk tidsskrift</i> 12(1), 28–38</span>
+        <div class="tags"><a class="tag" href="https://doi.org/10.18261/tt.12.1.3">doi:10.18261/tt.12.1.3</a></div>
+      </div></li>
+      <li><span class="yr">2021</span><div class="body">
+        <span class="ti">Konsulentbistand i saksforberedelsen. Om den «rettslige formen» i Backer-utvalgets forslag til § 26</span>
+        <span class="gl">Consultants in case preparation: on the “legal form” of the Backer committee’s proposed § 26</span>
+        <span class="src"><i>Kritisk juss</i> 47(1–2), 27–45</span>
+        <div class="tags"><a class="tag" href="https://doi.org/10.18261/issn.2387-4546-2021-01-02-03">doi:10.18261/issn.2387-4546-2021-01-02-03</a></div>
+      </div></li>
+      <li><span class="yr">2020</span><div class="body">
+        <a class="ti" href="papers/delegering-i-forvaltningsretten.html">Delegering i forvaltningsretten – Et spørsmål om styring?</a>
+        <span class="gl">Delegation in administrative law: a question of steering?</span>
+        <span class="src"><i>Jussens Venner</i> 55(4), 234–264</span>
+        <div class="tags"><a class="tag" href="https://doi.org/10.18261/issn.1504-3126-2020-04-02">doi:10.18261/issn.1504-3126-2020-04-02</a><a class="tag" href="https://hdl.handle.net/11250/2753647">Accepted manuscript</a></div>
+      </div></li>
+      <li><span class="yr">2020</span><div class="body">
+        <a class="ti" href="papers/overvektsprinsippets-fremvekst.html">Overvektsprinsippets fremvekst</a>
+        <span class="gl">The rise of the preponderance-of-evidence principle in Norwegian civil procedure</span>
+        <span class="src"><i>Tidsskrift for Rettsvitenskap</i> 133(2–3), 161–218</span>
+        <div class="tags"><a class="tag" href="https://doi.org/10.18261/issn.1504-3096-2020-02-03-02">doi:10.18261/issn.1504-3096-2020-02-03-02</a><a class="tag" href="https://hdl.handle.net/11250/2753634">Accepted manuscript</a></div>
+      </div></li>
+      <li><span class="yr">2020</span><div class="body">
+        <span class="ti">Suverene Schmitt?</span> <span class="co">with Marius Mikkel Kjølstad</span>
+        <span class="gl">Sovereign Schmitt? Review essay on Slagstad and Skar (eds.), <i>Carl Schmitt og hans norske venner</i></span>
+        <span class="src"><i>Agora</i> 38(3–4), 361–381</span>
+        <div class="tags"><a class="tag" href="https://doi.org/10.18261/ISSN1500-1571-2020-03-04-19">doi:10.18261/ISSN1500-1571-2020-03-04-19</a><a class="tag" href="https://hdl.handle.net/11250/2754056">Accepted manuscript</a></div>
+      </div></li>
+    </ul>
+
+    <h3>Other articles and reviews</h3>
+    <ul class="reg">
+      <li><span class="yr">2026</span><div class="body">
+        <span class="ti">Review of Richard Sannerholm, <i>Ansvar och ansvarsutkrävande – Institutioner, regler, processer</i></span>
+        <span class="src"><i>Lov og Rett</i> 65(4), 273–277</span>
+        <div class="tags"><a class="tag" href="https://doi.org/10.18261/lor.65.4.5">doi:10.18261/lor.65.4.5</a></div>
+      </div></li>
+      <li><span class="yr">2026</span><div class="body">
+        <span class="ti">Review of Hans Petter Graver, <i>Kampen om rettsstaten</i></span>
+        <span class="src"><i>Prosa</i> 2026(3)</span>
+      </div></li>
+      <li><span class="yr">2024</span><div class="body">
+        <span class="ti">Delegering og etatsstyringens rettslige rammer</span>
+        <span class="gl">Delegation and the legal framework of agency steering</span>
+        <span class="src"><i>Stat &amp; Styring</i> 34(4)</span>
+        <div class="tags"><a class="tag" href="https://doi.org/10.18261/stat.34.4.10">doi:10.18261/stat.34.4.10</a></div>
+      </div></li>
+      <li><span class="yr">2024</span><div class="body">
+        <span class="ti">Et juridisk begrep om politisk handling?</span>
+        <span class="gl">A legal concept of political action?</span>
+        <span class="src"><i>Nytt Norsk Tidsskrift</i> 41(3–4), 357–360</span>
+        <div class="tags"><a class="tag" href="https://doi.org/10.18261/nnt.41.3-4.15">doi:10.18261/nnt.41.3-4.15</a></div>
+      </div></li>
+      <li><span class="yr">2021</span><div class="body">
+        <span class="ti">Retten mellom demokratisk selvorganisering og klasseherredømme</span>
+        <span class="gl">Law between democratic self-organisation and class rule</span>
+        <span class="src"><i>Agora</i> 2021(1–2)</span>
+        <div class="tags"><a class="tag" href="https://doi.org/10.18261/ISSN1500-1571-2021-01-02-27">doi:10.18261/ISSN1500-1571-2021-01-02-27</a></div>
+      </div></li>
+    </ul>
+
+    <h3>Theses</h3>
+    <ul class="reg">
+      <li><span class="yr">2023</span><div class="body">
+        <span class="ti">Delegering: Et kritisk bidrag til rettsvitenskapens tenkning om forvaltningens organisering</span>
+        <span class="src">PhD thesis, Faculty of Law, University of Bergen</span>
+      </div></li>
+      <li><span class="yr">2019</span><div class="body">
+        <span class="ti">Den historiske utviklingen til beviskravet i sivile saker – i lys av kritisk rettspositivisme</span>
+        <span class="src">Master’s thesis, Faculty of Law, University of Bergen</span>
+      </div></li>
+    </ul>
+    <p class="note">Complete record in <a href="https://nva.sikt.no/research-profile/1103479">NVA</a> and <a href="https://orcid.org/0009-0000-1437-7042">ORCID</a>.</p>
+  </section>
+
+  <section id="talks" aria-labelledby="h-talks">
+    <h2 id="h-talks">Selected talks</h2>
+    <ul class="reg">
+      <li><span class="yr">2026</span><div class="body">
+        <span class="ti">Organizing Public Power: Institutional acts and institutional capacity</span>
+        <span class="src">Potentia and Public Law workshop, University of Amsterdam, October</span>
+      </div></li>
+      <li><span class="yr">2026</span><div class="body">
+        <span class="ti">Organizing public power</span>
+        <span class="src">ICON·S Annual Conference, University College Dublin, June–July</span>
+      </div></li>
+      <li><span class="yr">2026</span><div class="body">
+        <span class="ti">Ugyldige vedtak – opphevelse, endring eller opprettholdelse av et vedtak · Krav til automatisering av saksbehandlingen</span>
+        <span class="gl">Invalid decisions: annulment, amendment or upholding; legal requirements for automated case handling</span>
+        <span class="src">Forvaltningsrettskonferansen</span>
+      </div></li>
+      <li><span class="yr">2025</span><div class="body">
+        <span class="ti">Building, shifting and shaping institutional capacity: A legal-theoretical framework for analysing the state apparatus</span>
+        <span class="src">Law and the Critique of Political Economy: 60th anniversary of <i>Reading Capital</i></span>
+      </div></li>
+      <li><span class="yr">2025</span><div class="body">
+        <span class="ti">Institutional conceptual analysis and strategic selectivity</span>
+        <span class="src">Nordic Conference on Legal Method</span>
+      </div></li>
+      <li><span class="yr">2025</span><div class="body">
+        <span class="ti">Offentligt erstatningsansvar ved udlicitering/utkontrahering</span>
+        <span class="gl">Public liability in outsourcing</span>
+        <span class="src">Nordisk Forvaltningsretligt Seminarium</span>
+      </div></li>
+      <li><span class="yr">2025</span><div class="body">
+        <span class="ti">Delegering i ny forvaltningslov · Ugyldighet i ny forvaltningslov</span>
+        <span class="gl">Delegation and invalidity under the new Public Administration Act</span>
+        <span class="src">Forvaltningsrettskonferansen</span>
+      </div></li>
+      <li><span class="yr">2025</span><div class="body">
+        <span class="ti">Hva er kritisk med kritisk juss?</span>
+        <span class="gl">What is critical about critical legal studies?</span>
+        <span class="src">Det teoretiske grunnlaget for kritisk rettsvitenskap</span>
+      </div></li>
+      <li><span class="yr">2025</span><div class="body">
+        <span class="ti">Funksjonell organisering av Mattilsynet: Stats- og forvaltningsrettslige rammer</span>
+        <span class="gl">Functional organisation of the Norwegian Food Safety Authority: constitutional and administrative law constraints</span>
+      </div></li>
+      <li><span class="yr">2024</span><div class="body">
+        <span class="ti">Delegering: Et kritisk bidrag til rettsvitenskapens tenkning om forvaltningens organisering</span>
+        <span class="src">FON and the Nordic Social Law Network</span>
+      </div></li>
+      <li><span class="yr">2024</span><div class="body">
+        <span class="ti">Opprettelse og styring av DEKSA</span>
+        <span class="gl">The establishment and steering of DEKSA</span>
+      </div></li>
+    </ul>
+  </section>
+
+  <section id="expert" aria-labelledby="h-expert">
+    <h2 id="h-expert">Expert and applied work</h2>
+    <ul class="reg">
+      <li><span class="yr">2026</span><div class="body">
+        <span class="ti">Utredning om arbeidsfordeling, styring, tilsyn og kontroll på adopsjonsfeltet</span>
+        <span class="gl">Report on the allocation of tasks, steering, supervision and control in intercountry adoption</span>
+        <span class="src">Appendix 8 to NOU 2026:7 <i>Forsvarlighet, risiko og tillit</i>, the inquiry into intercountry adoption to Norway</span>
+        <div class="tags"><a class="tag" href="https://www.regjeringen.no/no/dokumenter/nou-2026-7/id3166395/">regjeringen.no</a></div>
+      </div></li>
+      <li><span class="yr">2026</span><div class="body">
+        <span class="ti">Input on the automation of exam grading</span>
+        <span class="src">Malthe-Sørenssen committee</span>
+      </div></li>
+    </ul>
+  </section>
+
+  <section id="public" aria-labelledby="h-public">
+    <h2 id="h-public">Public writing</h2>
+    <p class="note">In Norwegian.</p>
+    <ul class="reg">
+      <li><span class="yr">2026</span><div class="body">
+        <a class="ti" href="https://klassekampen.no/artikkel/2026-08-27/gjenfortryllingen-av-staten">Gjenfortryllingen av staten</a>
+        <span class="gl">The re-enchantment of the state: on the government’s targets for AI in the public sector</span>
+        <span class="src"><i>Klassekampen</i>, 27 August</span>
+      </div></li>
+      <li><span class="yr">2026</span><div class="body">
+        <a class="ti" href="https://klassekampen.no/artikkel/2026-07-22/en-stat-med-handlekraft">En stat med handlekraft</a>
+        <span class="gl">A state with the capacity to act</span>
+        <span class="src"><i>Klassekampen</i>, 22 July</span>
+      </div></li>
+      <li><span class="yr">2026</span><div class="body">
+        <a class="ti" href="https://www.khrono.no/kan-sensurbegrunnelser-automatiseres/1066460">Kan sensurbegrunnelser automatiseres?</a> · <a class="ti" href="https://www.khrono.no/tillit-og-lovbrudd-i-ki-begrunnelsenes-tid/1071303">Tillit og lovbrudd i KI-begrunnelsenes tid</a> <span class="co">with Øystein Flø Baste</span>
+        <span class="gl">Two pieces on the legality of AI-generated grading justifications</span>
+        <span class="src"><i>Khrono</i>, June and July</span>
+      </div></li>
+      <li><span class="yr">2026</span><div class="body">
+        <a class="ti" href="https://klassekampen.no/artikkel/2026-02-10/hva-laerer-vi-egentlig-av-schmitt">Hva lærer vi egentlig av Schmitt?</a>
+        <span class="gl">What do we actually learn from Schmitt?</span>
+        <span class="src"><i>Klassekampen</i>, 10 February</span>
+      </div></li>
+      <li><span class="yr">2025</span><div class="body">
+        <a class="ti" href="https://klassekampen.no/artikkel/2025-11-04/hva-skal-et-departement-vaere/34gUz">Hva skal et departement være?</a>
+        <span class="gl">What should a ministry be?</span>
+        <span class="src"><i>Klassekampen</i>, 4 November</span>
+      </div></li>
+      <li><span class="yr">2025</span><div class="body">
+        <a class="ti" href="https://www.khrono.no/skal-teknologien-fa-overta-vurderingsarbeidet/1023590">Skal teknologien få overta vurderingsarbeidet?</a>
+        <span class="gl">Should technology take over assessment?</span>
+        <span class="src"><i>Khrono</i>, December</span>
+      </div></li>
+      <li><span class="yr">2024</span><div class="body">
+        <span class="ti">Hva er det KI kan ødelegge?</span>
+        <span class="gl">What can AI destroy?</span>
+        <span class="src"><i>Klassekampen</i></span>
+      </div></li>
+      <li><span class="yr">2024</span><div class="body">
+        <span class="ti">Derfor må statsråder ofres</span>
+        <span class="gl">Why ministers must be sacrificed</span>
+      </div></li>
+    </ul>
+  </section>
+
+  <section id="teaching" aria-labelledby="h-teach">
+    <h2 id="h-teach">Teaching and affiliations</h2>
+    <div class="two">
+      <div>
+        <h3>Teaching</h3>
+        <ul class="plain">
+          <li>Course leader, JUS2011 Administrative Law and Legal Method (32 ECTS), INN. Redesigned from lectures to problem-based learning in seminar groups.</li>
+          <li>Previously seminar teaching in administrative, constitutional and criminal law at the University of Bergen; lecturer in administrative law at the University of Oslo; lecturer at VID Specialized University.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Research groups and service</h3>
+        <ul class="plain">
+          <li>NOMOS: Centre for International Research on Law, Culture and Power</li>
+          <li>Research groups in Legal History, Legal Method and Life Sciences, Department of Public and International Law, University of Oslo</li>
+          <li>Legal Development (Rettsutvikling) and Public Policy, Leadership and Governance (OPLOS), INN</li>
+          <li>Assessment committees for doctoral and associate professor positions; grant reviewer for the Research Council of the Faroe Islands</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="h-contact">
+    <h2 id="h-contact">Contact</h2>
+    <div class="contact">
+      <dl>
+        <dt>Email</dt>
+        <dd><span class="mail" id="mail">tarjei.rosvoll@inn.no</span><button class="copy" id="copy-mail" type="button">Copy</button></dd>
+        <dt>Address</dt>
+        <dd>University of Inland Norway, Lillehammer campus<br>Vormstuguvegen 2, 2624 Lillehammer, Norway</dd>
+      </dl>
+      <dl>
+        <dt>Profiles</dt>
+        <dd>
+          <a href="https://orcid.org/0009-0000-1437-7042">ORCID 0009-0000-1437-7042</a><br>
+          <a href="https://scholar.google.com/citations?user=wThmioMAAAAJ">Google Scholar</a><br>
+          <a href="https://nva.sikt.no/research-profile/1103479">NVA research profile</a><br>
+          <a href="https://www.inn.no/english/find-an-employee/tarjei-rosvoll.html">INN staff page</a>
+        </dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer>Last updated November 2026.</footer>
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('copy-mail');
+  var el = document.getElementById('mail');
+  if(!btn || !el) return;
+  function selectText(){
+    try{ var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }catch(e){}
+  }
+  btn.addEventListener('click', function(){
+    var done = function(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = 'Copy'; }, 1600); };
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(el.textContent.trim()).then(done, selectText);
+      } else { selectText(); }
+    }catch(e){ selectText(); }
+  });
+})();
+</script>

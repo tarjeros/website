@@ -1,0 +1,35 @@
+name: Check NVA for new records
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compare NVA with the site
+        id: nva
+        run: python scripts/check_nva.py --out new.md
+      - name: Open or update the review issue
+        if: steps.nva.outputs.new_count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh label create nva --color 24476e --description "New records in NVA" 2>/dev/null || true
+          num=$(gh issue list --label nva --state open --json number --jq '.[0].number')
+          if [ -n "$num" ]; then
+            gh issue edit "$num" --body-file new.md
+          else
+            gh issue create --title "New NVA records to review for the website" --label nva --body-file new.md
+          fi
