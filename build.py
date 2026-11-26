@@ -130,7 +130,7 @@ def paper_page(p, preview=False):
     else:
         rights = ""
 
-    home = "../index.html"
+    home = "../"
     body = f"""<div class="wrap">
   <header>
     <p class="crumb"><a href="{home}">← {e(NAME)}</a></p>
