@@ -169,7 +169,8 @@ def person_jsonld():
                        "Legal theory", "Legal history", "Public administration"],
         "sameAs": [ORCID, "https://scholar.google.com/citations?user=wThmioMAAAAJ",
                    "https://nva.sikt.no/research-profile/1103479",
-                   "https://www.inn.no/english/find-an-employee/tarjei-rosvoll.html"],
+                   "https://www.inn.no/english/find-an-employee/tarjei-rosvoll.html",
+                   "https://www.youtube.com/@tarjeros"],
     }
     return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + "</script>"
 
